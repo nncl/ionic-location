@@ -17,6 +17,10 @@
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <script src="http://maps.google.com/maps/api/js"></script>
     <script src="lib/ngmap/build/scripts/ng-map.min.js"></script>
+    <link href="//raw.githubusercontent.com/jtblin/angular-chart.js/master/dist/angular-chart.css" rel="stylesheet">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+    <script src="js/chart.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -40,6 +44,15 @@
                 <marker position="[{{coord.lat}}, {{coord.lon}}]" title="hello"></marker>
             </ng-map>
         </div>
+
+        <h2>Chart JS</h2>
+        <canvas
+                id="bar"
+                class="chart chart-line"
+                data="graph.data"
+                labels="graph.labels"
+                series='graph.series'
+                height="150"></canvas>
     </ion-content>
 </ion-pane>
 </body>

@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'ngCordova', 'ngMap'])
+angular.module('starter', ['ionic', 'ngCordova', 'ngMap' , 'chart.js'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -24,6 +24,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngMap'])
     })
 
     .controller('AppCtrl', function ($scope, $cordovaGeolocation) {
+
+        // MAP code
         $scope.location = {};
         $scope.coord = {
             "lat" : '40.71',
@@ -59,4 +61,15 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngMap'])
                     $scope.location.error = err;
                 });
         }
+
+        // Chart code
+        $scope.graph = {};
+        $scope.graph.data = [
+            //Awake
+            [16, 15, 20, 12, 16, 12, 8],
+            //Asleep
+            [8, 9, 4, 12, 8, 12, 14]
+        ];
+        $scope.graph.labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        $scope.graph.series = ['Awake', 'Asleep'];
     })
