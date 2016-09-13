@@ -36,13 +36,10 @@
         </button>
 
         <div class="padding-vertical">
-            <pre>{{location | json}}</pre>
-            <pre>{{coord | json}}</pre>
+            <ng-map center="{{coord.lat}}, {{coord.lon}}" zoom="10">
+                <marker position="[{{coord.lat}}, {{coord.lon}}]" title="hello"></marker>
+            </ng-map>
         </div>
-
-        <ng-map center="{{coord.lat}}, {{coord.lon}}" zoom="10">
-            <marker position="[{{coord.lat}}, {{coord.lon}}]" title="hello"></marker>
-        </ng-map>
     </ion-content>
 </ion-pane>
 </body>
